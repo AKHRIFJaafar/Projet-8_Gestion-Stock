@@ -25,6 +25,7 @@ function getall(){
  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
 </svg>
              </button></td>
+             <input type="hidden" class="idtd"></input>
                
                </tr>`)
             }
@@ -32,4 +33,65 @@ function getall(){
     })
   }
   getall()
+
+  // Add a student to database
+$(".submit").click(function() {
+    var Fname = $(".Firstname").val();
+    var Lname = $(".Lastname").val();
+    var Matricule = $(".Matricule").val();
+    var Email = $(".Email").val();
+  
+    $.ajax({
+      url:"api/addFormer.php",
+      method:"POST",
+      data:{
+        Firstname :Fname,
+        Lastname :Lname,
+        Matricule :Matricule,
+        Email :Email,
+      },
+      success:function(data) {
+      getall();
+    }
+  })
+})
+
+$("body").on("click",".btn-danger",function(){
+    var index = $(this).parents("tr").index();
+    // console.log(index)
+    $(".FormersList .idtd").val(FormersList[index]["id"]);
+    console.log(FormersList)
+    var FormerId = $(".FormersList .idtd").val();
+    console.log(FormerId)
+
+    $.ajax({
+        url:"api/deleteFormer.php",
+        method:"POST",
+        data:{
+            id :FormerId
+        },
+        success:function(data){
+            console.log(data)
+            // $(this).parent().remove();
+            getall();
+        }
+    })
+})
+  $(".downArrow").click(function() {
+    $(".add-form").slideToggle("slow");
+  })
+  $(".save-student").click(function() {
+  $(".edit-form").hide();
+  })
+  $(".submit").click(function() {
+  $(".add-form").hide();
+  })
+  $(".close").click(function() {
+  $(".add-form").hide();
+  })
+  $(".close").click(function() {
+  $(".edit-form").hide("fast",function() {
+  getall();
+  });
+  })
 })

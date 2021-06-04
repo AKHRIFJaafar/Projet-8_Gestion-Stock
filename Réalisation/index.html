@@ -9,6 +9,69 @@
     <div class="alert alert alert-primary" role="alert">
       <h4 class="text-primary text-center">PHP CRUD Application Using jQuery Ajax</h4>
     </div>
+    <div class="col-3 mb-3 mt-3">
+      <button type="button" class="btn btn-primary downArrow" data-toggle="modal" data-target="#userModal" id="addnewbtn">Add New <i class="fa fa-user-circle-o"></i></button>
+    </div>
+
+    <form class="add-form" style="display: none;">
+      <div class="form-row">
+        <div class="col-4">
+          <label for="inputName4">First Name</label>
+          <input type="text" class="form-control Firstname" id="inputName4" placeholder="First name">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-4">
+          <label for="inputLast4">Last Name</label>
+          <input type="text" class="form-control Lastname"  id="inputLast4" placeholder="Last name">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputMatricule4">Matricule</label>
+          <input type="number" class="form-control Matricule" id="inputMatricule4" placeholder="Matricule">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputEmail4">Email</label>
+          <input type="email" class="form-control Email" id="inputEmail4" placeholder="Email">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary submit">ADD FORMER</button>
+    </form>
+
+<!-- Edit a Former -->
+    <form class="edit-form" style="display: none;">
+      <div class="form-row">
+        <div class="col-4">
+          <label for="inputName4">First Name</label>
+          <input type="text" class="form-control Firstname" id="inputName4" placeholder="First name">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-4">
+          <label for="inputLast4">Last Name</label>
+          <input type="text" class="form-control Lastname"  id="inputLast4" placeholder="Last name">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputMatricule4">Matricule</label>
+          <input type="number" class="form-control Matricule" id="inputMatricule4" placeholder="Matricule">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputEmail4">Email</label>
+          <input type="email" class="form-control Email" id="inputEmail4" placeholder="Email">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary submit">SAVE EDIT</button>
+    </form>
+
+
+
     <!-- table -->
 <table class="table" id="userstable">
   <thead>
@@ -24,44 +87,16 @@
 
   </tbody>
   </table>
-<!-- table -->
-<!--?php
-include_once 'playerstable.php';
-?-->
-    <nav id="pagination">
-    </nav>
-    <input type="hidden" name="currentpage" id="currentpage" value="1">
-  </div>
-  <div>
+
+
+
+
+
     <!-- JS, Popper.js, and jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="Formerapp.js"></script>
 
-  </div>
-  <div id="overlay" style="display:none;">
-    <div class="spinner-border text-danger" style="width: 3rem; height: 3rem;"></div>
-    <br>
-    Loading...
-  </div>
-
-
-
-
-
-
-
-
-
-      
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
