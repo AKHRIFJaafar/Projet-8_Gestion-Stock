@@ -1,7 +1,7 @@
 $(document).ready(function(){
 var studentsList;
 function getall() {
-  $(".studentsList").html(" ");
+  $(".studentsList").html("");
   $.ajax({
     url:"api/getStudents.php",
     method:"GET",
